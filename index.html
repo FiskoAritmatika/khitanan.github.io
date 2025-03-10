@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-photo/white-simple-textured-design-background_53876-106174.jpg');
+        }
+
+        .countdown{
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: 500;
+            font-style: normal;
+            display: inline-block;
+            font-size: 3.5em;
+            list-style-type: none;
+            padding: 1em;
+            text-transform: uppercase;
+        }
+            </style>
+    <script src="/js/jquery.min.js"></script>
+    
+    <style>
+    #coverModal{
+        background-size:cover;
+        background-position:center;
+    }
+    #coverModal .card{
+        background-size:cover;
+        background-image: url(/img/textured-background.jpg);
+    }
+    .modal-content{
+        background-color:transparent;   
+        background-image: linear-gradient( 44deg , #283e3acf, #fde08700);
+    }
+    #coverModal .card::before {
+        content: '';
+        position: absolute;
+        width: 35%;
+        max-width: 199px;
+        max-height: 133px;
+        height: 50%;
+        top: 0;
+        left: 0;
+        background-position: top left;
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+    #coverModal .card::after {
+        content: '';
+        position: absolute;
+        width: 35%;
+        max-width: 199px;
+        max-height: 133px;
+        height: 50%;
+        bottom: 0;
+        right: 0;
+        background-position: bottom right;
+        background-size: contain;
+        background-repeat: no-repeat;
+        z-index: 1;
+    }
+    #covermodal .card .btn {
+        background-color: #fde087;
+        color: #283e3a;
+        border: 1px solid #283e3a;
+    }
+    </style>
+    <style>
+       .pagination{font-size: 8pt;}
+       .card-sticker{
+            cursor:pointer;
+        }
+        .wish .confirm{
+            border-radius:50rem!important;
+            padding:2px 3px;
+            display:inline-block;
+        }
+        .wish .user{
+            font-weight:bold;
+        }
+        .wish .time{
+            display:block;
+        }
+        .invitation-comment-form {
+            background-color: transparent;
+            text-align: left;
+            border: none;
+            box-shadow: 1px 1px 5px inset rgb(0 0 0 / 18%) !important;
+            padding: 15px;
+            border-radius: 9px;
+            text-shadow:1px 1px 1px white;
+            
+        }
+        .container-wishes{
+            max-height:750px;
+            overflow-y:auto;
+        }
+    </style>
+    <style>
+        .pswp__img{
+            top: 50%!important;
+            left: 50%!important;
+            transform: translate(-50%,-50%)!important;
+            height: auto!important;
+        }
+        .pswp__zoom-wrap{
+            transform:none!important;
+        }
+        .gallery{
+            pointer:cursor;
+        }
+    </style>
+    <style>
+        .frame{
+            position:relative;
+        }
+        .main-bg-img{
+            background-size: cover;
+            background-position:center;
+            position:fixed;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            filter:blur(0px)
+        }
+        .bg-img{
+            background-size: cover;
+            background-position:top center;
+            position:absolute;
+            width:100%;
+            height:100%;
+            top:0;
+            left:0;
+            filter:blur(0px)
+        }
+        .content-invitation{
+            position: relative;
+            z-index: 1;
+            border-radius: 19px;
+        }
+        section.card::before {
+            content: '';
+            position: absolute;
+            width: 35%;
+            max-width: 199px;
+            max-height: 133px;
+            height: 50%;
+            top: 0;
+            left: 0;
+            background-position: top left;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+        section.card{
+            margin-bottom:33px;
+        }
+        section.card::after {
+            content: '';
+            position: absolute;
+            width: 35%;
+            max-width: 199px;
+            max-height: 133px;
+            height: 50%;
+            bottom: 0;
+            right: 0;
+            background-position: bottom right;
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 1;
+        }
+    </style>
+    <style>
+        .judul {
+  font-family: "Parisienne", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+        .penerima {
+            font-size: 1.5em;
+        }
+
+        .btn-open {
+            background-color: #356364;
+            border-radius: 50px;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            font-size: 1em;
+        }
+
+        .ff-cinzel {
+            font-family: 'Cinzel', serif;
+        }
+
+        .ff-pm {
+            font-family: "Permanent Marker", cursive;
+        }
+
+        .ff-ps {
+            font-family: "Pinyon Script", cursive;
+        }
+
+        .ff-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .ff-montserrat-bold {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<div class="modal fade" id="coverModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-body container d-flex flex-column justify-content-center  overflow-visible">
+             <div class='card text-center overflow-auto py-5'>
+                    <span class='fw-bold ff-itim mb-2 fs-3 judul'>Undangan Khitan</span>
+                    <div class='h2 judul text-center ff-cinzel'>
+                        <span class="ff-cinzel">Ezkil Ligar Aruna Yuri</span>
+                    </div>
+                    <span class="cover-gambar position-relative" >
+                         <img class="position-relative frame" style="z-index:1;max-width:255px;width:100%" src='/img/frame-clip.png' alt='Gambar Cover Undangan' loading='lazy' />
+                         <div class="position-absolute" style="left: 50%;top: 50%;transform: translate(-50%, -50%)rotate(3deg);max-width:139px;width: 54%;height: 55%;background-image:url('/img/ezkil3.jpg');background-size:cover;background-position: center;border-radius:3px;" >
+                         </div>
+                    </span>
+                    <div class="to">
+                        <p class="mb-1">Kepada Yth.</p>
+                        <span class="mt-5 mb-5 fw-bold penerima"> Penerima Undangan </span>
+                        <div class="my-3 text-center">
+                            <button type="button" class="btn btn-primary btn-sm text-white open-invitation btn-open">
+                                Buka Undangan
+                            </button>
+                        </div>
+                    </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="container class-crush p-0">
+        <div id="nav-tabContent" class="overflow-hidden">
+            <div id="nav-cover" class="sheet" role="tabpanel" aria-labelledby="nav-cover-tab">
+                <section class="card border-0 bg-transparent p-3 text-center d-flex flex-column justify-content-center">
+                    <div class="bg-img"></div>
+                    <div class="content-invitation pt-5 mt-3">
+                        <h2 class="display-5 ff-pm fw-bold">Walimatul Khitan</h2>
+                        <div class='banner position-relative mt-2  m-auto w-100'>
+                            <img class="position-relative" style="z-index:1;max-width:255px;width:100%" src='/img/frame-clip.png' alt='Gambar Cover Undangan' loading='lazy' />
+                            <div class="position-absolute" style="left: 50%;top: 50%;transform: translate(-50%, -50%);max-width:139px;width: 54%;height: 55%;background-image:url('/img/ezkil.png');background-size:cover;background-position: center;border-radius:3px;" ></div>
+                        </div>
+                        <h1 class="d-block fs-2 ff-cinzel fw-bold membesar position-relative do-animate not-scrollanimate mb-3">
+                            Ezkil Ligar Aruna Yuri
+                        </h1>
+                        <p class="m-1 acara">Pada</p>
+                        <span style="font-family: 'PT Serif', serif;" class="fs-3 fw-bold d-block do-animate not-scrollanimate">Sabtu, 05 April 2025</span>
+                        <div class="mt-1">Acara akan dimulai dalam</div>
+                        <p id="demo" class="countdown"></p>
+                    </div>
+                    <div class="scroll-down" style="z-index:9"></div>
+                </section>
+            </div>
+            <div id="nav-perihal" class="sheet" role="tabpanel" aria-labelledby="nav-perihal-tab">
+                <section class="card border-0 bg-transparent p-0 p-0 text-center">
+                    <div class="frame d-flex flex-column justify-content-center">
+                        <div class="bg-img"></div>
+                        <div class="content-text content-invitation">
+                            <div class='h2 mb-4 ff-ps'>Assalamualaikum Wr.Wb.</div>
+                            <p class="ff-montserrat">
+                    		                        		        Dengan segala kerendahan hati,<br />
+Saya mengundang Bapak/Ibu/Om/Tante/Saudara/i untuk menghadiri acara khitanan anak kami,
+                    		                        		</p>
+                            <div class="content-text">
+                                                                <div class='position-relative m-auto w-50 kekanan do-animate'>
+                                    <img class='position-relative' style="z-index:1;max-width:199px" src="/img/frame-clip-square.png" width="100%"/>
+                                    <div class="position-absolute" style="left: 50%;top: 50%;transform: translate(-50%, -50%);max-width:200px;width: 54%;height: 55%;background-image:url('/img/ezkil2.jpg');background-size:cover;background-position: center;border-radius:3px;" ></div>
+                                </div>
+                                                                <div class="position-relative kekiri do-animate">
+                                    <h3 class="fw-bold ff-cinzel my-1" style="line-height:1.7">Ezkil</h3>
+                                </div>
+                            </div>
+                            <div class="ff-montserrat">
+                            <p>
+                    		                        		        Merupakan suatu kehormatan dan kebahagiaan bagi kami sekeluarga apabila
+                                                                    <p>Bapak/Ibu/Saudara/i</p>berkenan hadir, sekaligus memberikan doa restu kepada putra kami
+                                                                    <p>Atas kehadiran dan doanya kami ucapkan terima kasih yang tiada terbatas semoga Allah SWT. senantiasa melimpahruahkan ganjarannya.</p>
+                                                                    Assalamualaikum Wr.Wb.
+                                                                    <p>Hormat Kami Sekeluarga</p>
+                    		                        		</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+                        <div class="sheet ads">
+            </div>
+                        <div id="nav-acara" class="sheet" role="tabpanel" aria-labelledby="nav-acara-tab">
+                <section class="card border-0 bg-transparent p-0 text-center mx-3">
+                    <div class="frame d-flex flex-column justify-content-center">
+                        <div class="bg-img"></div>
+                        <div class="content-text content-invitation">
+                                                        <div class='bg-white rounded membesar py-3 px-1 shadow do-animate'>
+                                <span class='d-block my-1 ff-marry'>Waktu</span>
+                                <h5 class='rounded py-3  ff-alata fw-bold' style="line-height: 1.5;">Sabtu jam 10-Selesai</h5>
+                            </div>
+                                                        <div class='mt-3 bg-white rounded membesar py-3 px-1 shadow do-animate'>
+                                <span class='d-block my-1 ff-marry'>Tempat</span>
+                                <div class='row justify-content-center '>
+                                    <div class='col-md-12'>
+                                         <h5 class='p-3 ff-alata h6'>V548+QMW Dusun Banjarbanggi, RT01/RW01, Desa Pandanharum, Kecamatan Gabus, Kabupaten Grobogan, Central Java</h5>
+                                    </div>
+                                                                        <div class='col-md-12'>
+                                        <iframe loading="lazy"
+                                          width="100%" 
+                                          height="250" 
+                                          frameborder="0" 
+                                          scrolling="no" 
+                                          marginheight="0" 
+                                          marginwidth="0" 
+                                          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3958.852927743934!2d111.16411947537998!3d-7.142999992861175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMDgnMzQuOCJTIDExMcKwMTAnMDAuMSJF!5e0!3m2!1sid!2sid!4v1741528510150!5m2!1sid!2sid">
+                                         </iframe>
+                                    </div>
+                                                                    </div>
+                            </div>
+                                                        <div class='mt-5 bg-white rounded membesar py-3 px-1 shadow do-animate'>
+                                <div class='row justify-content-center'>
+                                    <div class='col-md-6'>
+                                        <p class='p-2 ff-montserrat-bold'>BCA:</p>
+                                        <p>5930582923</p>
+                                        <p>An. Sutini</p>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </section>
+            </div>
+        </div> 
+    </div>
+
+    <!-- Script JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+<script>
+    var coverModal = new bootstrap.Modal(document.getElementById('coverModal'), {
+      keyboard: false
+    });
+    coverModal.show();
+    var btnOpen = document.querySelector('.open-invitation');
+    btnOpen.addEventListener('click',function(e){
+        window.scrollTo(0,0);
+        coverModal.hide();
+         
+        audio.play();
+                var counterDownAjax = 0;
+        const paramsMethodGet = new URLSearchParams(window.location.search);
+        let toGuest = encodeURIComponent((paramsMethodGet.get("to") || ""));
+        if(toGuest == ""){
+             const arrayUrlPath = window.location.pathname.split("/to/");
+             if(arrayUrlPath.length > 1){
+                toGuest = arrayUrlPath[arrayUrlPath.length-1];
+             }
+        }
+        var urlCounterViewer = '/counterviewer/644036?to='+toGuest;
+        var _0x4b0b=["\x47\x45\x54","\x6F\x70\x65\x6E","\x6F\x6E\x72\x65\x61\x64\x79\x73\x74\x61\x74\x65\x63\x68\x61\x6E\x67\x65","\x72\x65\x61\x64\x79\x53\x74\x61\x74\x65","\x73\x74\x61\x74\x75\x73","\x72\x65\x73\x70\x6F\x6E\x73\x65\x54\x65\x78\x74","\x70\x61\x72\x73\x65","\x73\x65\x6E\x64"];var interValCounter=setInterval(function(){counterDownAjax++;if(counterDownAjax=== 10){var _0xafa5x2= new XMLHttpRequest();_0xafa5x2[_0x4b0b[1]](_0x4b0b[0],urlCounterViewer,true);_0xafa5x2[_0x4b0b[2]]= function(){if(this[_0x4b0b[3]]== 4&& this[_0x4b0b[4]]== 200){var _0xafa5x3=JSON[_0x4b0b[6]](this[_0x4b0b[5]])}};_0xafa5x2[_0x4b0b[7]]();clearInterval(interValCounter)}},1000)
+        try{
+            //document.documentElement.requestFullscreen();
+        }catch(e){}
+        
+    });
+</script>
+<script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Apr 5, 2025 10:00:00").getTime();
+    
+    // Update the count down every 1 second
+    var x = setInterval(function() {
+    
+      // Get today's date and time
+      var now = new Date().getTime();
+        
+      // Find the distance between now and the count down date
+      var distance = countDownDate - now;
+        
+      // Time calculations for days, hours, minutes and seconds
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+      // Output the result in an element with id="demo"
+      document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+      + minutes + "m " + seconds + "s ";
+        
+      // If the count down is over, write some text 
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("demo").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+    </script>
+
+</body>
+</html>
