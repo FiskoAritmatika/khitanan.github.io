@@ -226,6 +226,15 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: bold;
         }
+
+        ul {
+            list-style-type: none;
+        }
+
+        a {
+            text-decoration: none !important;
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -234,9 +243,19 @@
         <div class="modal-content">
           <div class="modal-body container d-flex flex-column justify-content-center  overflow-visible">
              <div class='card text-center overflow-auto py-5'>
-                    <span class='fw-bold ff-itim mb-2 fs-3 judul'>Undangan Khitan</span>
+                    <span class='fw-bold ff-itim mb-2 fs-3 judul'>Walimatul Khitan</span>
+                    <p class="ff-ps h3">Assalamualaikum Wr. Wb.</p>
+                    <div class="ff-montserrat">
+                        <span>Dengan memohon rahmat dan ridho Allah SWT.</span><br>
+                        <span>Kami bermaksud menyelenggarakan</span><br>
+                        <span>Syukuran Khitan putra kami,</span><br>
+                        <span>Yang bernama:</span>
+                    </div>
                     <div class='h2 judul text-center ff-cinzel'>
                         <span class="ff-cinzel">Ezkil Ligar Aruna Yuri</span>
+                    </div>
+                    <div class="ff-montserrat-bold">
+                        <span>Putra dari Bapak Masyuri & Ibu Sutini</span>
                     </div>
                     <span class="cover-gambar position-relative" >
                          <img class="position-relative frame" style="z-index:1;max-width:255px;width:100%" src='img/frame-clip.png' alt='Gambar Cover Undangan' loading='lazy' />
@@ -265,6 +284,10 @@
                     <div class="bg-img"></div>
                     <div class="content-invitation pt-5 mt-3">
                         <h2 class="display-5 ff-pm fw-bold">Walimatul Khitan</h2>
+                        <audio  autoplay>
+                            <source src="Instrumental.mp3" type="audio/mpeg">
+                          Your browser does not support the audio element.
+                        </audio>
                         <div class='banner position-relative mt-2  m-auto w-100'>
                             <img class="position-relative" style="z-index:1;max-width:255px;width:100%" src='img/frame-clip.png' alt='Gambar Cover Undangan' loading='lazy' />
                             <div class="position-absolute" style="left: 50%;top: 50%;transform: translate(-50%, -50%);max-width:139px;width: 54%;height: 55%;background-image:url('img/ezkil.png');background-size:cover;background-position: center;border-radius:3px;" ></div>
@@ -295,8 +318,6 @@ Saya mengundang Bapak/Ibu/Om/Tante/Saudara/i untuk menghadiri acara khitanan ana
                                     <img class='position-relative' style="z-index:1;max-width:199px" src="img/frame-clip-square.png" width="100%"/>
                                     <div class="position-absolute" style="left: 50%;top: 50%;transform: translate(-50%, -50%);max-width:125px;width: 54%;height: 55%;background-image:url('img/ezkil2.jpg');background-size:cover;background-position: center;border-radius:3px;" ></div>
                                 </div>
-                                                                <div class="position-relative kekiri do-animate">
-                                    <h3 class="fw-bold ff-cinzel my-1" style="line-height:1.7">Ezkil</h3>
                                 </div>
                             </div>
                             <div class="ff-montserrat">
@@ -312,16 +333,28 @@ Saya mengundang Bapak/Ibu/Om/Tante/Saudara/i untuk menghadiri acara khitanan ana
                     </div>
                 </section>
             </div>
-                        <div class="sheet ads">
-            </div>
                         <div id="nav-acara" class="sheet" role="tabpanel" aria-labelledby="nav-acara-tab">
                 <section class="card border-0 bg-transparent p-0 text-center mx-3">
                     <div class="frame d-flex flex-column justify-content-center">
                         <div class="bg-img"></div>
                         <div class="content-text content-invitation">
-                                                        <div class='bg-white rounded membesar py-3 px-1 shadow do-animate'>
-                                <span class='d-block my-1 ff-marry'>Waktu</span>
-                                <h5 class='rounded py-3  ff-alata fw-bold' style="line-height: 1.5;">Sabtu jam 10-Selesai</h5>
+                            <div class='bg-white rounded membesar py-3 px-1 shadow do-animate'>
+                                <span class='d-block my-1 ff-marry'>Rundown Acara</span>
+                                <h5 class='rounded py-3  ff-alata fw-bold' style="line-height: 1.5;"></h5>
+                                <ul class="list-group mx-5">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                      Reog
+                                      <span class="badge text-bg-primary rounded-pill">10.00 - Selesai</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                      Sangkara
+                                      <span class="badge text-bg-primary rounded-pill">20.00 - Selesai</span>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                      Makan gratis
+                                      <span class="badge text-bg-primary rounded-pill">07.00 - 21.00</span>
+                                    </li>
+                                  </ul>
                             </div>
                                                         <div class='mt-3 bg-white rounded membesar py-3 px-1 shadow do-animate'>
                                 <span class='d-block my-1 ff-marry'>Tempat</span>
@@ -329,8 +362,8 @@ Saya mengundang Bapak/Ibu/Om/Tante/Saudara/i untuk menghadiri acara khitanan ana
                                     <div class='col-md-12'>
                                          <h5 class='p-3 ff-alata h6'>V548+QMW Dusun Banjarbanggi, RT01/RW01, Desa Pandanharum, Kecamatan Gabus, Kabupaten Grobogan, Central Java</h5>
                                     </div>
-                                                                        <div class='col-md-12'>
-                                        <iframe loading="lazy"
+                                    <div class='col-md-12'>
+                                        <iframe loading="eager"
                                           width="100%" 
                                           height="250" 
                                           frameborder="0" 
@@ -339,19 +372,14 @@ Saya mengundang Bapak/Ibu/Om/Tante/Saudara/i untuk menghadiri acara khitanan ana
                                           marginwidth="0" 
                                           src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3958.852927743934!2d111.16411947537998!3d-7.142999992861175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMDgnMzQuOCJTIDExMcKwMTAnMDAuMSJF!5e0!3m2!1sid!2sid!4v1741528510150!5m2!1sid!2sid">
                                          </iframe>
-                                    </div>
-                                                                    </div>
-                            </div>
-                                                        <div class='mt-5 bg-white rounded membesar py-3 px-1 shadow do-animate'>
-                                <div class='row justify-content-center'>
-                                    <div class='col-md-6'>
-                                        <p class='p-2 ff-montserrat-bold'>BCA:</p>
-                                        <p>5930582923</p>
-                                        <p>An. Sutini</p>
+                                         <button type="button" class="btn btn-primary btn-sm text-white open-invitation btn-open">
+                                            <a href="https://goo.gl/maps/5QSyuJcHgGPjik2w8">Google Maps</a>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
                             </div>
+                        </div>
                     </div>
                 </section>
             </div>
